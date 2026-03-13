@@ -1,0 +1,28 @@
+﻿{
+    "id":  1,
+    "jsonrpc":  "2.0",
+    "result":  {
+                   "content":  [
+                                   {
+                                       "text":  "{\"name\":\"projects/18023947034978952346/screens/94ba4264272845a6a9aa3b5a8a665fe4\",\"title\":\"Stok: Produk Jadi\",\"screenshot\":{\"name\":\"projects/18023947034978952346/files/940e7a2df08e4f48bebb3952cd39d248\",\"downloadUrl\":\"https://lh3.googleusercontent.com/aida/AOfcidUJ5FQVo7KbtF_C2Q5pv77vR4iEqkh8ko_cz-Sb4e8BpfmYHay_dCrkH6EG0EOxd-iQ_gxdRxw2ADIlrdsayfzWhonEtoQgboE5BjV2EUyexc3odL2PVxa_fb13rSobwgijtQzt9whD8HrajMzSpJ6xPBONLnncQmoJTM7ew5uWVDBue58-NVxpN8ntpWV_ueAiSJ0geNJAD8LIdiTQBgDHf3yAQaNp1U-Hz_zR3pcIEXGhqgb5v6_s2Om-\"},\"htmlCode\":{\"name\":\"projects/18023947034978952346/files/c489dbe51e1646d495c9886b76379681\",\"downloadUrl\":\"https://contribution.usercontent.google.com/download?c=CgthaWRhX2NvZGVmeBJ8Eh1hcHBfY29tcGFuaW9uX2dlbmVyYXRlZF9maWxlcxpbCiVodG1sX2JhOWQwZDdkYWU3ZjQ1M2ZhMjJiZGJjMWUwMDg5OTFlEgsSBxDTtabduwcYAZIBJAoKcHJvamVjdF9pZBIWQhQxODAyMzk0NzAzNDk3ODk1MjM0Ng\u0026filename=\u0026opi=89354086\",\"mimeType\":\"text/html\"},\"width\":\"2560\",\"height\":\"2048\",\"deviceType\":\"DESKTOP\"}",
+                                       "type":  "text"
+                                   }
+                               ],
+                   "structuredContent":  {
+                                             "deviceType":  "DESKTOP",
+                                             "height":  "2048",
+                                             "htmlCode":  {
+                                                              "downloadUrl":  "https://contribution.usercontent.google.com/download?c=CgthaWRhX2NvZGVmeBJ8Eh1hcHBfY29tcGFuaW9uX2dlbmVyYXRlZF9maWxlcxpbCiVodG1sX2JhOWQwZDdkYWU3ZjQ1M2ZhMjJiZGJjMWUwMDg5OTFlEgsSBxDTtabduwcYAZIBJAoKcHJvamVjdF9pZBIWQhQxODAyMzk0NzAzNDk3ODk1MjM0Ng\u0026filename=\u0026opi=89354086",
+                                                              "mimeType":  "text/html",
+                                                              "name":  "projects/18023947034978952346/files/c489dbe51e1646d495c9886b76379681"
+                                                          },
+                                             "name":  "projects/18023947034978952346/screens/94ba4264272845a6a9aa3b5a8a665fe4",
+                                             "screenshot":  {
+                                                                "downloadUrl":  "https://lh3.googleusercontent.com/aida/AOfcidUJ5FQVo7KbtF_C2Q5pv77vR4iEqkh8ko_cz-Sb4e8BpfmYHay_dCrkH6EG0EOxd-iQ_gxdRxw2ADIlrdsayfzWhonEtoQgboE5BjV2EUyexc3odL2PVxa_fb13rSobwgijtQzt9whD8HrajMzSpJ6xPBONLnncQmoJTM7ew5uWVDBue58-NVxpN8ntpWV_ueAiSJ0geNJAD8LIdiTQBgDHf3yAQaNp1U-Hz_zR3pcIEXGhqgb5v6_s2Om-",
+                                                                "name":  "projects/18023947034978952346/files/940e7a2df08e4f48bebb3952cd39d248"
+                                                            },
+                                             "title":  "Stok: Produk Jadi",
+                                             "width":  "2560"
+                                         }
+               }
+}

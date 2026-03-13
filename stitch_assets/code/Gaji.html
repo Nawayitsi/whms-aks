@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#1d283a",
+                        "background-light": "#f6f7f7",
+                        "background-dark": "#16181c",
+                    },
+                    fontFamily: {
+                        "display": ["Inter"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<title>Accounting System - Gaji Karyawan</title>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100">
+<div class="relative flex h-auto min-h-screen w-full flex-col group/design-root overflow-x-hidden">
+<div class="layout-container flex h-full grow flex-col">
+<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 px-10 py-3">
+<div class="flex items-center gap-8">
+<div class="flex items-center gap-4 text-primary dark:text-slate-100">
+<div class="size-8 flex items-center justify-center bg-primary text-white rounded-lg">
+<span class="material-symbols-outlined">account_balance_wallet</span>
+</div>
+<h2 class="text-slate-900 dark:text-slate-100 text-lg font-bold leading-tight tracking-[-0.015em]">PT Anak Kembar Sejati</h2>
+</div>
+<div class="flex items-center gap-9">
+<a class="text-slate-600 dark:text-slate-400 hover:text-primary dark:hover:text-white text-sm font-medium leading-normal" href="#">Dashboard</a>
+<a class="text-slate-600 dark:text-slate-400 hover:text-primary dark:hover:text-white text-sm font-medium leading-normal" href="#">Karyawan</a>
+<a class="text-primary dark:text-white text-sm font-bold leading-normal border-b-2 border-primary" href="#">Gaji</a>
+<a class="text-slate-600 dark:text-slate-400 hover:text-primary dark:hover:text-white text-sm font-medium leading-normal" href="#">Laporan</a>
+</div>
+</div>
+<div class="flex flex-1 justify-end gap-8">
+<label class="flex flex-col min-w-40 !h-10 max-w-64">
+<div class="flex w-full flex-1 items-stretch rounded-lg h-full">
+<div class="text-slate-500 flex border-none bg-slate-100 dark:bg-slate-800 items-center justify-center pl-4 rounded-l-lg">
+<span class="material-symbols-outlined text-xl">search</span>
+</div>
+<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-slate-900 dark:text-slate-100 focus:outline-0 focus:ring-0 border-none bg-slate-100 dark:bg-slate-800 placeholder:text-slate-500 px-4 rounded-l-none pl-2 text-base font-normal leading-normal" placeholder="Search" value=""/>
+</div>
+</label>
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10 border border-slate-200 dark:border-slate-700" data-alt="Profile picture of the administrator" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBawBIzMIroUpIVcTzGkygoVmzu7nXqDeXp7RMC4-hL7QIzblhh40df-sFc1T9nib_vjFoAUIO1A1lUvJALAE--Z4ULClcouQ8eU8xloFunjw0dbHCVLPgzjKucRDAdvfdY_p469rZAl67Dkxv-5YjuDyZ4gbKoF5QE3302KHKrldV_X_3dSyPbRqVs1p4uPmLvgCD3zfP3YM8hBvtbPw-CWMkMQrA77qID0S36wjrx2lFNuWR0gV14I9tVpr3a4g_9xJM4Aeu9sFF8");'></div>
+</div>
+</header>
+<main class="px-4 md:px-20 lg:px-40 flex flex-1 justify-center py-8">
+<div class="layout-content-container flex flex-col max-w-[1200px] flex-1 gap-6">
+<div class="flex flex-wrap justify-between items-end gap-4">
+<div class="flex min-w-72 flex-col gap-1">
+<p class="text-slate-900 dark:text-slate-100 text-4xl font-black leading-tight tracking-[-0.033em]">Gaji Karyawan</p>
+<p class="text-slate-500 dark:text-slate-400 text-base font-normal leading-normal">Manajemen penggajian bulanan periode Oktober 2023</p>
+</div>
+<div class="flex gap-3">
+<button class="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-slate-200 dark:bg-slate-800 text-slate-900 dark:text-slate-100 text-sm font-bold leading-normal tracking-[0.015em] hover:bg-slate-300 dark:hover:bg-slate-700">
+<span class="material-symbols-outlined text-lg mr-2">file_download</span>
+<span class="truncate">Export PDF</span>
+</button>
+<button class="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-primary text-white text-sm font-bold leading-normal tracking-[0.015em] hover:opacity-90">
+<span class="material-symbols-outlined text-lg mr-2">add</span>
+<span class="truncate">Tambah Gaji Baru</span>
+</button>
+</div>
+</div>
+<div class="flex flex-wrap gap-2">
+<a class="text-slate-500 dark:text-slate-400 text-sm font-medium leading-normal hover:text-primary" href="#">Home</a>
+<span class="text-slate-400 dark:text-slate-600 text-sm font-medium leading-normal">/</span>
+<span class="text-slate-900 dark:text-slate-100 text-sm font-medium leading-normal">Daftar Gaji</span>
+</div>
+<div class="bg-white dark:bg-slate-900 p-4 rounded-xl shadow-sm border border-slate-200 dark:border-slate-800">
+<div class="flex flex-col md:flex-row gap-4 mb-6">
+<label class="flex flex-col flex-1 h-12">
+<div class="flex w-full flex-1 items-stretch rounded-lg h-full">
+<div class="text-slate-500 flex border-none bg-slate-100 dark:bg-slate-800 items-center justify-center pl-4 rounded-l-lg">
+<span class="material-symbols-outlined">search</span>
+</div>
+<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-slate-900 dark:text-slate-100 focus:outline-0 focus:ring-0 border-none bg-slate-100 dark:bg-slate-800 placeholder:text-slate-500 px-4 rounded-l-none pl-2 text-base font-normal leading-normal" placeholder="Cari nama atau NIK karyawan..." value=""/>
+</div>
+</label>
+<div class="flex gap-3 overflow-x-auto pb-2 md:pb-0">
+<button class="flex h-12 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-slate-100 dark:bg-slate-800 px-4 border border-slate-200 dark:border-slate-700">
+<p class="text-slate-700 dark:text-slate-300 text-sm font-medium">Semua Divisi</p>
+<span class="material-symbols-outlined text-slate-500">expand_more</span>
+</button>
+<button class="flex h-12 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-primary/10 dark:bg-primary/20 px-4 border border-primary/20">
+<p class="text-primary dark:text-slate-100 text-sm font-semibold">Produksi</p>
+<span class="material-symbols-outlined text-primary dark:text-slate-100 text-sm">close</span>
+</button>
+<button class="flex h-12 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-slate-100 dark:bg-slate-800 px-4 border border-slate-200 dark:border-slate-700">
+<p class="text-slate-700 dark:text-slate-300 text-sm font-medium">Administrasi</p>
+<span class="material-symbols-outlined text-slate-500">expand_more</span>
+</button>
+<button class="flex h-12 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-slate-100 dark:bg-slate-800 px-4 border border-slate-200 dark:border-slate-700">
+<p class="text-slate-700 dark:text-slate-300 text-sm font-medium">Gudang</p>
+<span class="material-symbols-outlined text-slate-500">expand_more</span>
+</button>
+</div>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="border-b border-slate-200 dark:border-slate-800 text-slate-500 dark:text-slate-400 text-sm uppercase tracking-wider">
+<th class="px-4 py-4 font-semibold">Karyawan</th>
+<th class="px-4 py-4 font-semibold">Gaji Pokok</th>
+<th class="px-4 py-4 font-semibold">Bonus Produksi</th>
+<th class="px-4 py-4 font-semibold">Potongan</th>
+<th class="px-4 py-4 font-semibold">Total Gaji</th>
+<th class="px-4 py-4 font-semibold text-right">Aksi</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-slate-100 dark:divide-slate-800">
+<tr class="hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors">
+<td class="px-4 py-4">
+<div class="flex items-center gap-3">
+<div class="size-10 rounded-full bg-slate-200 dark:bg-slate-700" data-alt="Ahmad Fauzi profile picture" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDiGUQtEwDlF3__TBhtIplznkc0pt-dDrK-5PAO-c_3exC7JF6RfoiTjeWlpxeJgRwSBPpI5nw-tBPyO4P8n5Eps1Lx4E5lnTpI9gZn0hMhe2t6II5U9GIU7ZFmuSVjbRy8Elk_A3eXTUHBTpAMh41c7QL-6rp3SXqj0GDSpKal-Pa2ncUDj9_DtAqM5zyfvxu3esS4z8EGbTFPEby0Fnl4s-Czd1OR3p9EsZuFc_GLDQjqEvlZSwRiVJAwx1Az7OBJwPXFTEmWhGXN'); background-size: cover;"></div>
+<div>
+<p class="text-slate-900 dark:text-slate-100 font-bold">Ahmad Fauzi</p>
+<p class="text-slate-500 text-xs">Produksi • NIK: 2021001</p>
+</div>
+</div>
+</td>
+<td class="px-4 py-4 text-slate-700 dark:text-slate-300 font-medium">Rp 4.500.000</td>
+<td class="px-4 py-4 text-emerald-600 dark:text-emerald-400 font-medium">+ Rp 750.000</td>
+<td class="px-4 py-4 text-rose-600 dark:text-rose-400 font-medium">- Rp 100.000</td>
+<td class="px-4 py-4 text-slate-900 dark:text-slate-100 font-bold">Rp 5.150.000</td>
+<td class="px-4 py-4 text-right">
+<div class="flex justify-end gap-2">
+<button class="p-2 text-slate-400 hover:text-primary hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg">
+<span class="material-symbols-outlined">edit</span>
+</button>
+<button class="p-2 text-slate-400 hover:text-rose-600 hover:bg-rose-50 dark:hover:bg-rose-900/20 rounded-lg">
+<span class="material-symbols-outlined">delete</span>
+</button>
+</div>
+</td>
+</tr>
+<tr class="hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors">
+<td class="px-4 py-4">
+<div class="flex items-center gap-3">
+<div class="size-10 rounded-full bg-slate-200 dark:bg-slate-700" data-alt="Siti Aminah profile picture" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuC7M8R-nmrn0TW13MhsArxTx7RYXljKO4CttwseL9Zr9QWS3FK4XCTFLjE5nE14CEI5AsMk9mozzddo8-IeUjkHQL3x83Dhc7xldkq0lXEDVu-mLx-Av6fV6XWXiOa-of-hwujE2D_jcSg_Ev6LdUumI3G3oey_MCNrpdCtn49IxksmZ_rEWBs60Px0MukgE9_hF4jH-wpDnfsw1itjvA0RVaW24a1btTgUXL-xApn7QjgJFFbieKrsq2fbgjt79TMeVMsOj9nGwQ1U'); background-size: cover;"></div>
+<div>
+<p class="text-slate-900 dark:text-slate-100 font-bold">Siti Aminah</p>
+<p class="text-slate-500 text-xs">Produksi • NIK: 2021042</p>
+</div>
+</div>
+</td>
+<td class="px-4 py-4 text-slate-700 dark:text-slate-300 font-medium">Rp 4.200.000</td>
+<td class="px-4 py-4 text-emerald-600 dark:text-emerald-400 font-medium">+ Rp 820.000</td>
+<td class="px-4 py-4 text-rose-600 dark:text-rose-400 font-medium">- Rp 50.000</td>
+<td class="px-4 py-4 text-slate-900 dark:text-slate-100 font-bold">Rp 4.970.000</td>
+<td class="px-4 py-4 text-right">
+<div class="flex justify-end gap-2">
+<button class="p-2 text-slate-400 hover:text-primary hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg">
+<span class="material-symbols-outlined">edit</span>
+</button>
+<button class="p-2 text-slate-400 hover:text-rose-600 hover:bg-rose-50 dark:hover:bg-rose-900/20 rounded-lg">
+<span class="material-symbols-outlined">delete</span>
+</button>
+</div>
+</td>
+</tr>
+<tr class="hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors">
+<td class="px-4 py-4">
+<div class="flex items-center gap-3">
+<div class="size-10 rounded-full bg-slate-200 dark:bg-slate-700" data-alt="Budi Santoso profile picture" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuB4P_HnYsaIv5Z60wsHnI4Mn1VJ3BPQxhxPjyFbnuIYJJrZvoHj3GFQZ43ytbfZPYLSM-D_C1bNRdaf0LOXcAVq_2ea2N8Rie_yi8gODw5wEw4GLM-wjOhVKEd3Z0uDdiWv-APSTb-S0usYG8fqJj5WCiXFTtVOaOgk45J_8xhXpw72TD8eFUR5UFMKuxN8ttvXNsEyj8SxDCdx9OElEoMVsfBE1P1Yw1crUxb0SzvB79UcLhifIBR22o1vyA01-KLZ4WQo4ANf3wZb'); background-size: cover;"></div>
+<div>
+<p class="text-slate-900 dark:text-slate-100 font-bold">Budi Santoso</p>
+<p class="text-slate-500 text-xs">Produksi • NIK: 2021015</p>
+</div>
+</div>
+</td>
+<td class="px-4 py-4 text-slate-700 dark:text-slate-300 font-medium">Rp 4.500.000</td>
+<td class="px-4 py-4 text-emerald-600 dark:text-emerald-400 font-medium">+ Rp 450.000</td>
+<td class="px-4 py-4 text-rose-600 dark:text-rose-400 font-medium">- Rp 250.000</td>
+<td class="px-4 py-4 text-slate-900 dark:text-slate-100 font-bold">Rp 4.700.000</td>
+<td class="px-4 py-4 text-right">
+<div class="flex justify-end gap-2">
+<button class="p-2 text-slate-400 hover:text-primary hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg">
+<span class="material-symbols-outlined">edit</span>
+</button>
+<button class="p-2 text-slate-400 hover:text-rose-600 hover:bg-rose-50 dark:hover:bg-rose-900/20 rounded-lg">
+<span class="material-symbols-outlined">delete</span>
+</button>
+</div>
+</td>
+</tr>
+<tr class="hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors">
+<td class="px-4 py-4">
+<div class="flex items-center gap-3">
+<div class="size-10 rounded-full bg-slate-200 dark:bg-slate-700" data-alt="Dewi Lestari profile picture" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuA0rcM8oQIq4xIJK-MGPtQGrRgfM7UWQneJtkGfUDQUaMJlLOirzyGhKZw02e3NvBUjHbcXsZ48BHIekC3YzmX5zXlol43Tg-qOSNq31Qm2F1E5J8UvBQez8Zx14p8T0GHROzf3SW46nMx2KWmrm3ppW_6pWLXG000rFEMos73XU4pb8gcIb50awmFUVmw1oDTq6fyMc8CIqxV9VTVX7KKbIRpW4FMNw1pmELenaaqOUdmSvZn5OwR-pI8zH_ng6ChDzSp71PkmhFl9'); background-size: cover;"></div>
+<div>
+<p class="text-slate-900 dark:text-slate-100 font-bold">Dewi Lestari</p>
+<p class="text-slate-500 text-xs">Produksi • NIK: 2022008</p>
+</div>
+</div>
+</td>
+<td class="px-4 py-4 text-slate-700 dark:text-slate-300 font-medium">Rp 4.200.000</td>
+<td class="px-4 py-4 text-emerald-600 dark:text-emerald-400 font-medium">+ Rp 900.000</td>
+<td class="px-4 py-4 text-rose-600 dark:text-rose-400 font-medium">- Rp 0</td>
+<td class="px-4 py-4 text-slate-900 dark:text-slate-100 font-bold">Rp 5.100.000</td>
+<td class="px-4 py-4 text-right">
+<div class="flex justify-end gap-2">
+<button class="p-2 text-slate-400 hover:text-primary hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg">
+<span class="material-symbols-outlined">edit</span>
+</button>
+<button class="p-2 text-slate-400 hover:text-rose-600 hover:bg-rose-50 dark:hover:bg-rose-900/20 rounded-lg">
+<span class="material-symbols-outlined">delete</span>
+</button>
+</div>
+</td>
+</tr>
+</tbody>
+<tfoot>
+<tr class="bg-slate-50 dark:bg-slate-800/30 font-bold">
+<td class="px-4 py-4 text-slate-900 dark:text-slate-100">Total Periode Ini</td>
+<td class="px-4 py-4 text-slate-700 dark:text-slate-300">Rp 17.400.000</td>
+<td class="px-4 py-4 text-emerald-600 dark:text-emerald-400">Rp 2.920.000</td>
+<td class="px-4 py-4 text-rose-600 dark:text-rose-400">Rp 400.000</td>
+<td class="px-4 py-4 text-primary dark:text-white text-lg">Rp 19.920.000</td>
+<td></td>
+</tr>
+</tfoot>
+</table>
+</div>
+<div class="flex items-center justify-between mt-6 border-t border-slate-100 dark:border-slate-800 pt-4">
+<p class="text-sm text-slate-500">Menampilkan 1-4 dari 48 karyawan</p>
+<div class="flex gap-1">
+<button class="p-2 rounded hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-400">
+<span class="material-symbols-outlined">chevron_left</span>
+</button>
+<button class="size-8 rounded bg-primary text-white text-sm font-bold">1</button>
+<button class="size-8 rounded hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-600 dark:text-slate-400 text-sm">2</button>
+<button class="size-8 rounded hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-600 dark:text-slate-400 text-sm">3</button>
+<button class="p-2 rounded hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-400">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<div class="bg-white dark:bg-slate-900 p-5 rounded-xl border border-slate-200 dark:border-slate-800">
+<div class="flex justify-between items-start mb-4">
+<div class="p-2 bg-emerald-100 dark:bg-emerald-900/30 text-emerald-600 dark:text-emerald-400 rounded-lg">
+<span class="material-symbols-outlined">payments</span>
+</div>
+<span class="text-xs font-bold text-emerald-600 bg-emerald-50 dark:bg-emerald-900/20 px-2 py-1 rounded">+12% vs bln lalu</span>
+</div>
+<p class="text-slate-500 text-sm font-medium">Total Pengeluaran Gaji</p>
+<p class="text-2xl font-black text-slate-900 dark:text-slate-100 mt-1">Rp 245.850.000</p>
+</div>
+<div class="bg-white dark:bg-slate-900 p-5 rounded-xl border border-slate-200 dark:border-slate-800">
+<div class="flex justify-between items-start mb-4">
+<div class="p-2 bg-amber-100 dark:bg-amber-900/30 text-amber-600 dark:text-amber-400 rounded-lg">
+<span class="material-symbols-outlined">groups</span>
+</div>
+<span class="text-xs font-bold text-slate-500 bg-slate-100 dark:bg-slate-800 px-2 py-1 rounded">Tetap</span>
+</div>
+<p class="text-slate-500 text-sm font-medium">Total Karyawan Dibayar</p>
+<p class="text-2xl font-black text-slate-900 dark:text-slate-100 mt-1">48 Orang</p>
+</div>
+<div class="bg-white dark:bg-slate-900 p-5 rounded-xl border border-slate-200 dark:border-slate-800">
+<div class="flex justify-between items-start mb-4">
+<div class="p-2 bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 rounded-lg">
+<span class="material-symbols-outlined">precision_manufacturing</span>
+</div>
+<span class="text-xs font-bold text-emerald-600 bg-emerald-50 dark:bg-emerald-900/20 px-2 py-1 rounded">Target Tercapai</span>
+</div>
+<p class="text-slate-500 text-sm font-medium">Rata-rata Bonus Produksi</p>
+<p class="text-2xl font-black text-slate-900 dark:text-slate-100 mt-1">Rp 735.000</p>
+</div>
+</div>
+</div>
+</main>
+<footer class="border-t border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 py-6 px-10 text-center text-slate-500 dark:text-slate-400 text-sm">
+<p>© 2023 PT Anak Kembar Sejati - Internal Accounting Management System</p>
+</footer>
+</div>
+</div>
+</body></html>

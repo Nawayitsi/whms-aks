@@ -1,0 +1,28 @@
+﻿{
+    "id":  1,
+    "jsonrpc":  "2.0",
+    "result":  {
+                   "content":  [
+                                   {
+                                       "text":  "{\"name\":\"projects/18023947034978952346/screens/446e0f9a5b3e411c889e4f227addc7f1\",\"title\":\"Accounting: Laporan Keuangan\",\"screenshot\":{\"name\":\"projects/18023947034978952346/files/480cbf26c9714d18b8f5f25110b06352\",\"downloadUrl\":\"https://lh3.googleusercontent.com/aida/AOfcidVEA49-twVOL8ig00VqgqJlO8CWSSOImYE3Ra6-eJ7mrJZh2bMg_EfMpE7sVUHXj209wrRB9Rn39Bn2pZYsWT4k4LKWTifC46vgs-t9MIc474vlSLDZ2jPjByodOPUg9si370xzcfh_mYFXJhLeVgBL9nL6KRrK4FLf45Qi_CAyAOiVv6jjUjQ-4SBnupUiuZAcS2Z_DhzusSidsQjIcJ89Eg6Jv0Z4hXO09igVHgJ4Ms6G9SA5-dEwdGCi\"},\"htmlCode\":{\"name\":\"projects/18023947034978952346/files/cbe816765f6f4f2bbb7f784e595c5e63\",\"downloadUrl\":\"https://contribution.usercontent.google.com/download?c=CgthaWRhX2NvZGVmeBJ8Eh1hcHBfY29tcGFuaW9uX2dlbmVyYXRlZF9maWxlcxpbCiVodG1sXzg1Y2ZjNGE4ZjI5ZDRiN2NhYTVlNTI4MDAyMGJhZWU0EgsSBxDTtabduwcYAZIBJAoKcHJvamVjdF9pZBIWQhQxODAyMzk0NzAzNDk3ODk1MjM0Ng\u0026filename=\u0026opi=89354086\",\"mimeType\":\"text/html\"},\"width\":\"2560\",\"height\":\"2048\",\"deviceType\":\"DESKTOP\"}",
+                                       "type":  "text"
+                                   }
+                               ],
+                   "structuredContent":  {
+                                             "deviceType":  "DESKTOP",
+                                             "height":  "2048",
+                                             "htmlCode":  {
+                                                              "downloadUrl":  "https://contribution.usercontent.google.com/download?c=CgthaWRhX2NvZGVmeBJ8Eh1hcHBfY29tcGFuaW9uX2dlbmVyYXRlZF9maWxlcxpbCiVodG1sXzg1Y2ZjNGE4ZjI5ZDRiN2NhYTVlNTI4MDAyMGJhZWU0EgsSBxDTtabduwcYAZIBJAoKcHJvamVjdF9pZBIWQhQxODAyMzk0NzAzNDk3ODk1MjM0Ng\u0026filename=\u0026opi=89354086",
+                                                              "mimeType":  "text/html",
+                                                              "name":  "projects/18023947034978952346/files/cbe816765f6f4f2bbb7f784e595c5e63"
+                                                          },
+                                             "name":  "projects/18023947034978952346/screens/446e0f9a5b3e411c889e4f227addc7f1",
+                                             "screenshot":  {
+                                                                "downloadUrl":  "https://lh3.googleusercontent.com/aida/AOfcidVEA49-twVOL8ig00VqgqJlO8CWSSOImYE3Ra6-eJ7mrJZh2bMg_EfMpE7sVUHXj209wrRB9Rn39Bn2pZYsWT4k4LKWTifC46vgs-t9MIc474vlSLDZ2jPjByodOPUg9si370xzcfh_mYFXJhLeVgBL9nL6KRrK4FLf45Qi_CAyAOiVv6jjUjQ-4SBnupUiuZAcS2Z_DhzusSidsQjIcJ89Eg6Jv0Z4hXO09igVHgJ4Ms6G9SA5-dEwdGCi",
+                                                                "name":  "projects/18023947034978952346/files/480cbf26c9714d18b8f5f25110b06352"
+                                                            },
+                                             "title":  "Accounting: Laporan Keuangan",
+                                             "width":  "2560"
+                                         }
+               }
+}

@@ -1,0 +1,28 @@
+﻿{
+    "id":  1,
+    "jsonrpc":  "2.0",
+    "result":  {
+                   "content":  [
+                                   {
+                                       "text":  "{\"name\":\"projects/18023947034978952346/screens/380a64d297774649add1bbeccfd1fb4a\",\"title\":\"Inventory Dashboard\",\"screenshot\":{\"name\":\"projects/18023947034978952346/files/239f784d1cda41fba71688f474931f2c\",\"downloadUrl\":\"https://lh3.googleusercontent.com/aida/ADBb0ujCw3vBmOTaxoM2nVn8NnxIvnH6eWsCQ34d_P3E7A2DqbIMtdwYwbD07rWukePmI84vfrxf5p6rFqdLWDRIJ71aGhc5W90Xa1pWhRZJufU0jR2LtbSMDPCIqZ1OMBgFbiGc80ORRBLdJG3u2I2nDLpxiTnXQVJmtIRfTj4NGD4RoL31Cpkmoj5eDjXaJ8idamBH64iHpfZ9DzIycZPA4JOkE0COl1wJAw-Ng1TvSNxcrkiW-s4rhEK96lWJ\"},\"htmlCode\":{\"name\":\"projects/18023947034978952346/files/1aa966f714034e1e8754d0ebf87c562a\",\"downloadUrl\":\"https://contribution.usercontent.google.com/download?c=CgthaWRhX2NvZGVmeBJ8Eh1hcHBfY29tcGFuaW9uX2dlbmVyYXRlZF9maWxlcxpbCiVodG1sXzE1MGFlMmM0OTE5MTQ4OTBiMTY2OGZiYTVjMjQ1MTFiEgsSBxDTtabduwcYAZIBJAoKcHJvamVjdF9pZBIWQhQxODAyMzk0NzAzNDk3ODk1MjM0Ng\u0026filename=\u0026opi=89354086\",\"mimeType\":\"text/html\"},\"width\":\"2560\",\"height\":\"2048\",\"deviceType\":\"DESKTOP\"}",
+                                       "type":  "text"
+                                   }
+                               ],
+                   "structuredContent":  {
+                                             "deviceType":  "DESKTOP",
+                                             "height":  "2048",
+                                             "htmlCode":  {
+                                                              "downloadUrl":  "https://contribution.usercontent.google.com/download?c=CgthaWRhX2NvZGVmeBJ8Eh1hcHBfY29tcGFuaW9uX2dlbmVyYXRlZF9maWxlcxpbCiVodG1sXzE1MGFlMmM0OTE5MTQ4OTBiMTY2OGZiYTVjMjQ1MTFiEgsSBxDTtabduwcYAZIBJAoKcHJvamVjdF9pZBIWQhQxODAyMzk0NzAzNDk3ODk1MjM0Ng\u0026filename=\u0026opi=89354086",
+                                                              "mimeType":  "text/html",
+                                                              "name":  "projects/18023947034978952346/files/1aa966f714034e1e8754d0ebf87c562a"
+                                                          },
+                                             "name":  "projects/18023947034978952346/screens/380a64d297774649add1bbeccfd1fb4a",
+                                             "screenshot":  {
+                                                                "downloadUrl":  "https://lh3.googleusercontent.com/aida/ADBb0ujCw3vBmOTaxoM2nVn8NnxIvnH6eWsCQ34d_P3E7A2DqbIMtdwYwbD07rWukePmI84vfrxf5p6rFqdLWDRIJ71aGhc5W90Xa1pWhRZJufU0jR2LtbSMDPCIqZ1OMBgFbiGc80ORRBLdJG3u2I2nDLpxiTnXQVJmtIRfTj4NGD4RoL31Cpkmoj5eDjXaJ8idamBH64iHpfZ9DzIycZPA4JOkE0COl1wJAw-Ng1TvSNxcrkiW-s4rhEK96lWJ",
+                                                                "name":  "projects/18023947034978952346/files/239f784d1cda41fba71688f474931f2c"
+                                                            },
+                                             "title":  "Inventory Dashboard",
+                                             "width":  "2560"
+                                         }
+               }
+}

@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+
+<html lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#1d283a",
+                        "background-light": "#f6f7f7",
+                        "background-dark": "#16181c",
+                    },
+                    fontFamily: {
+                        "display": ["Inter"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<title>Biaya Produksi Rokok - Accounting System</title>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100">
+<div class="relative flex min-h-screen w-full flex-col">
+<!-- Top Navigation -->
+<header class="sticky top-0 z-50 flex items-center justify-between border-b border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 px-6 py-3 lg:px-10">
+<div class="flex items-center gap-8">
+<div class="flex items-center gap-3">
+<div class="bg-primary text-white p-1.5 rounded-lg flex items-center justify-center">
+<span class="material-symbols-outlined">factory</span>
+</div>
+<h2 class="text-primary dark:text-slate-100 text-lg font-bold leading-tight tracking-tight">AccuTab Pro</h2>
+</div>
+<nav class="hidden md:flex items-center gap-6">
+<a class="text-slate-600 dark:text-slate-400 hover:text-primary dark:hover:text-white text-sm font-medium transition-colors" href="#">Dashboard</a>
+<a class="text-primary dark:text-white border-b-2 border-primary py-4 text-sm font-bold" href="#">Production</a>
+<a class="text-slate-600 dark:text-slate-400 hover:text-primary dark:hover:text-white text-sm font-medium transition-colors" href="#">Inventory</a>
+<a class="text-slate-600 dark:text-slate-400 hover:text-primary dark:hover:text-white text-sm font-medium transition-colors" href="#">Reports</a>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<div class="relative hidden sm:block">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-lg">search</span>
+<input class="w-64 rounded-lg border-none bg-slate-100 dark:bg-slate-800 pl-10 pr-4 py-2 text-sm focus:ring-2 focus:ring-primary/20 outline-none" placeholder="Cari laporan atau batch..." type="text"/>
+</div>
+<button class="p-2 text-slate-500 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-full">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<div class="h-8 w-8 rounded-full bg-slate-200 dark:bg-slate-700 overflow-hidden border border-slate-300 dark:border-slate-600" data-alt="User profile avatar icon">
+<img alt="Avatar" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDDs5-z2bfv3WTffxvc6c2VjiQLqRHtgP1LLrG9U9LzZE-5hlU0f6Eqv1Jpuw7e2HCgQPvFBwUIoTYKXZA2sAMFEDSBn68wAUSYHMTtgfFgiJO1F0geEqSkZaU_PR--vS4Nf6-HgBZYsbJFXPxMGQcdPG6IoRbM7t62HL_kqaTm0dGXOyxlSNg4ph5xIopiPOeJ6paqYwRCeV09FwtBfWZRxEMZ_OxOOM91pgbQu4-_wd6YoVBnFcom2g7xxNRQF_ag9ench0Wn2szg"/>
+</div>
+</div>
+</header>
+<div class="flex flex-1">
+<!-- Sidebar -->
+<aside class="hidden lg:flex w-64 flex-col border-r border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-4 gap-2">
+<p class="px-3 text-xs font-semibold uppercase tracking-wider text-slate-400 mb-2">Main Menu</p>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-all" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="text-sm font-medium">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg bg-primary/10 text-primary dark:text-slate-100 font-bold" href="#">
+<span class="material-symbols-outlined">analytics</span>
+<span class="text-sm">Biaya Produksi</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-all" href="#">
+<span class="material-symbols-outlined">inventory_2</span>
+<span class="text-sm font-medium">Stok Bahan Baku</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-all" href="#">
+<span class="material-symbols-outlined">groups</span>
+<span class="text-sm font-medium">Tenaga Kerja</span>
+</a>
+<div class="mt-auto pt-4 border-t border-slate-100 dark:border-slate-800">
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-all" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="text-sm font-medium">Settings</span>
+</a>
+</div>
+</aside>
+<!-- Main Content -->
+<main class="flex-1 overflow-y-auto p-6 lg:p-10 space-y-8">
+<!-- Page Header -->
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
+<div>
+<nav class="flex items-center gap-2 text-xs font-medium text-slate-400 mb-2 uppercase tracking-widest">
+<a class="hover:text-primary" href="#">Production</a>
+<span class="material-symbols-outlined text-[10px]">chevron_right</span>
+<span class="text-primary dark:text-slate-300">Cost Breakdown</span>
+</nav>
+<h1 class="text-3xl font-black text-slate-900 dark:text-white tracking-tight">Biaya Produksi Rokok</h1>
+<p class="text-slate-500 dark:text-slate-400 mt-1">Laporan rincian biaya manufaktur per batch produksi.</p>
+</div>
+<div class="flex items-center gap-3">
+<button class="flex items-center gap-2 px-4 py-2 border border-slate-300 dark:border-slate-700 rounded-lg text-sm font-semibold hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors bg-white dark:bg-slate-900">
+<span class="material-symbols-outlined text-lg">calendar_today</span>
+<span>Mei 2024</span>
+</button>
+<button class="flex items-center gap-2 px-4 py-2 bg-primary text-white rounded-lg text-sm font-bold hover:bg-slate-800 transition-shadow shadow-sm">
+<span class="material-symbols-outlined text-lg">ios_share</span>
+<span>Export Report</span>
+</button>
+</div>
+</div>
+<!-- Stats Overview -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+<div class="bg-white dark:bg-slate-900 p-6 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm">
+<p class="text-slate-500 dark:text-slate-400 text-sm font-medium">Total Batch Cost</p>
+<div class="flex items-end justify-between mt-2">
+<h3 class="text-2xl font-bold text-slate-900 dark:text-white">Rp 450.000.000</h3>
+<span class="text-emerald-600 dark:text-emerald-400 text-sm font-bold flex items-center gap-0.5">
+<span class="material-symbols-outlined text-sm">trending_up</span> 5.2%
+                            </span>
+</div>
+</div>
+<div class="bg-white dark:bg-slate-900 p-6 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm">
+<p class="text-slate-500 dark:text-slate-400 text-sm font-medium">Cost Per Stick</p>
+<div class="flex items-end justify-between mt-2">
+<h3 class="text-2xl font-bold text-slate-900 dark:text-white">Rp 1.500</h3>
+<span class="text-rose-600 dark:text-rose-400 text-sm font-bold flex items-center gap-0.5">
+<span class="material-symbols-outlined text-sm">trending_down</span> 1.1%
+                            </span>
+</div>
+</div>
+<div class="bg-white dark:bg-slate-900 p-6 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm">
+<p class="text-slate-500 dark:text-slate-400 text-sm font-medium">Production Volume</p>
+<div class="flex items-end justify-between mt-2">
+<h3 class="text-2xl font-bold text-slate-900 dark:text-white">300.000 <span class="text-sm font-normal text-slate-400">sticks</span></h3>
+<span class="text-slate-400 text-sm font-bold">0%</span>
+</div>
+</div>
+<div class="bg-white dark:bg-slate-900 p-6 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm">
+<p class="text-slate-500 dark:text-slate-400 text-sm font-medium">Machine Efficiency</p>
+<div class="flex items-end justify-between mt-2">
+<h3 class="text-2xl font-bold text-slate-900 dark:text-white">94.8%</h3>
+<span class="text-emerald-600 dark:text-emerald-400 text-sm font-bold flex items-center gap-0.5">
+<span class="material-symbols-outlined text-sm">trending_up</span> 2.4%
+                            </span>
+</div>
+</div>
+</div>
+<!-- Detailed Breakdown Table -->
+<div class="bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 overflow-hidden shadow-sm">
+<div class="px-6 py-4 border-b border-slate-200 dark:border-slate-800 flex items-center justify-between bg-slate-50/50 dark:bg-slate-800/30">
+<h4 class="font-bold text-slate-900 dark:text-white">Rincian Komponen Biaya per Batch</h4>
+<div class="flex gap-2">
+<button class="p-1.5 rounded-lg hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-500 transition-colors">
+<span class="material-symbols-outlined text-lg">filter_list</span>
+</button>
+<button class="p-1.5 rounded-lg hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-500 transition-colors">
+<span class="material-symbols-outlined text-lg">more_horiz</span>
+</button>
+</div>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left text-sm">
+<thead>
+<tr class="border-b border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-800/50">
+<th class="px-6 py-4 font-semibold text-slate-600 dark:text-slate-400">Komponen Biaya</th>
+<th class="px-6 py-4 font-semibold text-slate-600 dark:text-slate-400">Kuantitas</th>
+<th class="px-6 py-4 font-semibold text-slate-600 dark:text-slate-400">Harga Satuan</th>
+<th class="px-6 py-4 font-semibold text-slate-600 dark:text-slate-400">Total Biaya</th>
+<th class="px-6 py-4 font-semibold text-slate-600 dark:text-slate-400">% dari Total</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-slate-200 dark:divide-slate-800">
+<tr>
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="h-8 w-8 rounded bg-amber-100 dark:bg-amber-900/30 flex items-center justify-center text-amber-600">
+<span class="material-symbols-outlined text-lg">eco</span>
+</div>
+<div>
+<p class="font-bold text-slate-900 dark:text-white">Tembakau (Tobacco)</p>
+<p class="text-xs text-slate-500">Grade A Virginia Mix</p>
+</div>
+</div>
+</td>
+<td class="px-6 py-4 font-medium">450 Kg</td>
+<td class="px-6 py-4">Rp 400.000</td>
+<td class="px-6 py-4 font-bold text-slate-900 dark:text-white">Rp 180.000.000</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-2">
+<div class="w-16 bg-slate-200 dark:bg-slate-700 h-1.5 rounded-full overflow-hidden">
+<div class="bg-amber-500 h-full w-[40%]"></div>
+</div>
+<span class="text-xs font-bold text-slate-500">40%</span>
+</div>
+</td>
+</tr>
+<tr>
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="h-8 w-8 rounded bg-orange-100 dark:bg-orange-900/30 flex items-center justify-center text-orange-600">
+<span class="material-symbols-outlined text-lg">spa</span>
+</div>
+<div>
+<p class="font-bold text-slate-900 dark:text-white">Cengkeh (Clove)</p>
+<p class="text-xs text-slate-500">Dried Zanzibar Type</p>
+</div>
+</div>
+</td>
+<td class="px-6 py-4 font-medium">120 Kg</td>
+<td class="px-6 py-4">Rp 150.000</td>
+<td class="px-6 py-4 font-bold text-slate-900 dark:text-white">Rp 18.000.000</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-2">
+<div class="w-16 bg-slate-200 dark:bg-slate-700 h-1.5 rounded-full overflow-hidden">
+<div class="bg-orange-500 h-full w-[4%]"></div>
+</div>
+<span class="text-xs font-bold text-slate-500">4%</span>
+</div>
+</td>
+</tr>
+<tr>
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="h-8 w-8 rounded bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center text-blue-600">
+<span class="material-symbols-outlined text-lg">description</span>
+</div>
+<div>
+<p class="font-bold text-slate-900 dark:text-white">Kertas (Rolling Paper)</p>
+<p class="text-xs text-slate-500">Bleached Wood Pulp 3000m</p>
+</div>
+</div>
+</td>
+<td class="px-6 py-4 font-medium">15 Rolls</td>
+<td class="px-6 py-4">Rp 2.000.000</td>
+<td class="px-6 py-4 font-bold text-slate-900 dark:text-white">Rp 30.000.000</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-2">
+<div class="w-16 bg-slate-200 dark:bg-slate-700 h-1.5 rounded-full overflow-hidden">
+<div class="bg-blue-500 h-full w-[6.7%]"></div>
+</div>
+<span class="text-xs font-bold text-slate-500">6.7%</span>
+</div>
+</td>
+</tr>
+<tr>
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="h-8 w-8 rounded bg-slate-100 dark:bg-slate-700 flex items-center justify-center text-slate-600 dark:text-slate-300">
+<span class="material-symbols-outlined text-lg">filter_alt</span>
+</div>
+<div>
+<p class="font-bold text-slate-900 dark:text-white">Filter</p>
+<p class="text-xs text-slate-500">Acetate Tow - 120mm</p>
+</div>
+</div>
+</td>
+<td class="px-6 py-4 font-medium">300.000 Pcs</td>
+<td class="px-6 py-4">Rp 150</td>
+<td class="px-6 py-4 font-bold text-slate-900 dark:text-white">Rp 45.000.000</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-2">
+<div class="w-16 bg-slate-200 dark:bg-slate-700 h-1.5 rounded-full overflow-hidden">
+<div class="bg-slate-500 h-full w-[10%]"></div>
+</div>
+<span class="text-xs font-bold text-slate-500">10%</span>
+</div>
+</td>
+</tr>
+<tr>
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="h-8 w-8 rounded bg-indigo-100 dark:bg-indigo-900/30 flex items-center justify-center text-indigo-600">
+<span class="material-symbols-outlined text-lg">inventory</span>
+</div>
+<div>
+<p class="font-bold text-slate-900 dark:text-white">Kemasan (Packaging)</p>
+<p class="text-xs text-slate-500">Soft Pack Premium</p>
+</div>
+</div>
+</td>
+<td class="px-6 py-4 font-medium">15.000 Packs</td>
+<td class="px-6 py-4">Rp 4.000</td>
+<td class="px-6 py-4 font-bold text-slate-900 dark:text-white">Rp 60.000.000</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-2">
+<div class="w-16 bg-slate-200 dark:bg-slate-700 h-1.5 rounded-full overflow-hidden">
+<div class="bg-indigo-500 h-full w-[13.3%]"></div>
+</div>
+<span class="text-xs font-bold text-slate-500">13.3%</span>
+</div>
+</td>
+</tr>
+<tr>
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="h-8 w-8 rounded bg-emerald-100 dark:bg-emerald-900/30 flex items-center justify-center text-emerald-600">
+<span class="material-symbols-outlined text-lg">person</span>
+</div>
+<div>
+<p class="font-bold text-slate-900 dark:text-white">Tenaga Kerja (Labor)</p>
+<p class="text-xs text-slate-500">Direct Production Team</p>
+</div>
+</div>
+</td>
+<td class="px-6 py-4 font-medium">1.200 Man-Hours</td>
+<td class="px-6 py-4">Rp 60.000</td>
+<td class="px-6 py-4 font-bold text-slate-900 dark:text-white">Rp 72.000.000</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-2">
+<div class="w-16 bg-slate-200 dark:bg-slate-700 h-1.5 rounded-full overflow-hidden">
+<div class="bg-emerald-500 h-full w-[16%]"></div>
+</div>
+<span class="text-xs font-bold text-slate-500">16%</span>
+</div>
+</td>
+</tr>
+<tr>
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="h-8 w-8 rounded bg-rose-100 dark:bg-rose-900/30 flex items-center justify-center text-rose-600">
+<span class="material-symbols-outlined text-lg">settings_suggest</span>
+</div>
+<div>
+<p class="font-bold text-slate-900 dark:text-white">Biaya Mesin (Machine)</p>
+<p class="text-xs text-slate-500">Depreciation &amp; Maintenance</p>
+</div>
+</div>
+</td>
+<td class="px-6 py-4 font-medium">180 Hours</td>
+<td class="px-6 py-4">Rp 138.888</td>
+<td class="px-6 py-4 font-bold text-slate-900 dark:text-white">Rp 25.000.000</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-2">
+<div class="w-16 bg-slate-200 dark:bg-slate-700 h-1.5 rounded-full overflow-hidden">
+<div class="bg-rose-500 h-full w-[5.5%]"></div>
+</div>
+<span class="text-xs font-bold text-slate-500">5.5%</span>
+</div>
+</td>
+</tr>
+</tbody>
+<tfoot>
+<tr class="bg-slate-50 dark:bg-slate-800 font-black text-slate-900 dark:text-white border-t border-slate-200 dark:border-slate-800">
+<td class="px-6 py-5 text-right uppercase tracking-wider text-xs" colspan="3">Total Produksi per Batch</td>
+<td class="px-6 py-5 text-xl">Rp 450.000.000</td>
+<td class="px-6 py-5">
+<span class="inline-flex items-center px-2 py-1 rounded bg-primary text-white text-[10px] font-bold">100%</span>
+</td>
+</tr>
+</tfoot>
+</table>
+</div>
+</div>
+<!-- Footer info -->
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+<div class="p-6 bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm flex flex-col gap-4">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">info</span>
+<h5 class="font-bold">Informasi Batch</h5>
+</div>
+<div class="grid grid-cols-2 gap-y-4 text-sm">
+<div>
+<p class="text-slate-500">ID Batch</p>
+<p class="font-bold">#BT-2024-05-012</p>
+</div>
+<div>
+<p class="text-slate-500">Tanggal Mulai</p>
+<p class="font-bold">12 Mei 2024</p>
+</div>
+<div>
+<p class="text-slate-500">Lini Produksi</p>
+<p class="font-bold">Line A - Automation</p>
+</div>
+<div>
+<p class="text-slate-500">Status</p>
+<span class="px-2 py-0.5 bg-emerald-100 text-emerald-700 dark:bg-emerald-900/40 dark:text-emerald-300 rounded text-xs font-bold">Completed</span>
+</div>
+</div>
+</div>
+<div class="p-6 bg-primary text-white rounded-xl shadow-lg flex flex-col justify-between" data-alt="Abstract dark blue gradient pattern background">
+<div class="space-y-2">
+<h5 class="text-lg font-bold">Ringkasan Anggaran</h5>
+<p class="text-slate-400 text-sm">Status real-time terhadap anggaran bulanan produksi.</p>
+</div>
+<div class="mt-6">
+<div class="flex justify-between items-end mb-2">
+<span class="text-sm font-medium">Anggaran Terpakai</span>
+<span class="text-sm font-bold">Rp 1.250M / Rp 2.000M</span>
+</div>
+<div class="w-full bg-white/10 h-3 rounded-full overflow-hidden">
+<div class="bg-white h-full w-[62.5%] rounded-full"></div>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+</div>
+</body></html>

@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Stok Barang System - Stock Movements</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#1d283a",
+                        "background-light": "#f6f7f7",
+                        "background-dark": "#16181c",
+                    },
+                    fontFamily: {
+                        "display": ["Inter"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100">
+<div class="relative flex h-auto min-h-screen w-full flex-col group/design-root overflow-x-hidden">
+<div class="layout-container flex h-full grow flex-col">
+<!-- Navigation -->
+<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 px-6 md:px-10 py-3 sticky top-0 z-50">
+<div class="flex items-center gap-8">
+<div class="flex items-center gap-3 text-primary dark:text-slate-100">
+<div class="size-8 bg-primary text-white rounded-lg flex items-center justify-center">
+<span class="material-symbols-outlined text-xl">inventory_2</span>
+</div>
+<h2 class="text-lg font-bold leading-tight tracking-tight">StokBarang</h2>
+</div>
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-slate-600 dark:text-slate-400 hover:text-primary dark:hover:text-white text-sm font-medium transition-colors" href="#">Dashboard</a>
+<a class="text-slate-600 dark:text-slate-400 hover:text-primary dark:hover:text-white text-sm font-medium transition-colors" href="#">Inventory</a>
+<a class="text-primary dark:text-white text-sm font-bold border-b-2 border-primary pb-1" href="#">Movements</a>
+<a class="text-slate-600 dark:text-slate-400 hover:text-primary dark:hover:text-white text-sm font-medium transition-colors" href="#">Reports</a>
+</nav>
+</div>
+<div class="flex flex-1 justify-end gap-4">
+<label class="hidden sm:flex flex-col min-w-40 h-10 max-w-64">
+<div class="flex w-full flex-1 items-stretch rounded-lg h-full">
+<div class="text-slate-500 flex bg-slate-100 dark:bg-slate-800 items-center justify-center pl-4 rounded-l-lg border-none">
+<span class="material-symbols-outlined text-xl">search</span>
+</div>
+<input class="form-input flex w-full min-w-0 flex-1 rounded-lg text-slate-900 dark:text-slate-100 focus:outline-0 focus:ring-2 focus:ring-primary border-none bg-slate-100 dark:bg-slate-800 placeholder:text-slate-500 px-4 rounded-l-none pl-2 text-sm font-normal" placeholder="Search transactions..." value=""/>
+</div>
+</label>
+<div class="flex gap-2">
+<button class="flex items-center justify-center rounded-lg h-10 w-10 bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-200 transition-colors">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="flex items-center justify-center rounded-lg h-10 w-10 bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-200 transition-colors">
+<span class="material-symbols-outlined">account_circle</span>
+</button>
+</div>
+</div>
+</header>
+<main class="flex-1 max-w-7xl mx-auto w-full px-4 md:px-10 py-8">
+<!-- Page Header -->
+<div class="flex flex-wrap justify-between items-end gap-4 mb-6">
+<div class="flex flex-col gap-1">
+<h1 class="text-primary dark:text-white text-3xl font-black leading-tight tracking-tight">Stock Movements</h1>
+<p class="text-slate-500 dark:text-slate-400 text-base">Track and manage all incoming, outgoing, and adjustment transactions across warehouses.</p>
+</div>
+<div class="flex gap-3">
+<button class="flex items-center justify-center rounded-lg h-10 px-4 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-200 text-sm font-bold transition-all hover:bg-slate-50">
+<span class="material-symbols-outlined mr-2 text-lg">download</span>
+                            Export CSV
+                        </button>
+<button class="flex items-center justify-center rounded-lg h-10 px-4 bg-primary text-white text-sm font-bold transition-all hover:opacity-90 shadow-sm">
+<span class="material-symbols-outlined mr-2 text-lg">add</span>
+                            New Movement
+                        </button>
+</div>
+</div>
+<!-- Tabs -->
+<div class="mb-6">
+<div class="flex border-b border-slate-200 dark:border-slate-800 gap-8">
+<a class="flex items-center border-b-2 border-primary text-primary dark:text-white pb-3 pt-2" href="#">
+<span class="text-sm font-bold">All Movements</span>
+<span class="ml-2 bg-primary/10 text-primary text-xs px-2 py-0.5 rounded-full">1,248</span>
+</a>
+<a class="flex items-center border-b-2 border-transparent text-slate-500 dark:text-slate-400 hover:text-primary dark:hover:text-slate-200 pb-3 pt-2" href="#">
+<span class="text-sm font-medium">Stock In</span>
+</a>
+<a class="flex items-center border-b-2 border-transparent text-slate-500 dark:text-slate-400 hover:text-primary dark:hover:text-slate-200 pb-3 pt-2" href="#">
+<span class="text-sm font-medium">Stock Out</span>
+</a>
+<a class="flex items-center border-b-2 border-transparent text-slate-500 dark:text-slate-400 hover:text-primary dark:hover:text-slate-200 pb-3 pt-2" href="#">
+<span class="text-sm font-medium">Adjustments</span>
+</a>
+</div>
+</div>
+<!-- Filters -->
+<div class="flex flex-wrap gap-3 mb-6">
+<button class="flex h-9 items-center justify-center gap-x-2 rounded-lg bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 px-4 transition-colors hover:border-primary">
+<span class="material-symbols-outlined text-lg text-slate-500">calendar_today</span>
+<p class="text-slate-700 dark:text-slate-200 text-sm font-medium">Last 7 Days</p>
+<span class="material-symbols-outlined text-lg">expand_more</span>
+</button>
+<button class="flex h-9 items-center justify-center gap-x-2 rounded-lg bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 px-4 transition-colors hover:border-primary">
+<span class="material-symbols-outlined text-lg text-slate-500">warehouse</span>
+<p class="text-slate-700 dark:text-slate-200 text-sm font-medium">Main Warehouse</p>
+<span class="material-symbols-outlined text-lg">expand_more</span>
+</button>
+<button class="flex h-9 items-center justify-center gap-x-2 rounded-lg bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 px-4 transition-colors hover:border-primary">
+<span class="material-symbols-outlined text-lg text-slate-500">filter_list</span>
+<p class="text-slate-700 dark:text-slate-200 text-sm font-medium">More Filters</p>
+</button>
+<div class="ml-auto flex items-center gap-2">
+<p class="text-xs text-slate-500 dark:text-slate-400">Sort by:</p>
+<button class="flex h-9 items-center justify-center gap-x-2 rounded-lg px-2 text-slate-700 dark:text-slate-200 text-sm font-medium">
+                            Newest First
+                            <span class="material-symbols-outlined text-lg">sort</span>
+</button>
+</div>
+</div>
+<!-- Content Table -->
+<div class="rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 overflow-hidden shadow-sm">
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-slate-50 dark:bg-slate-800/50 border-b border-slate-200 dark:border-slate-800">
+<th class="px-6 py-4 text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400">Date &amp; Time</th>
+<th class="px-6 py-4 text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400">Item Details</th>
+<th class="px-6 py-4 text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400">Movement Type</th>
+<th class="px-6 py-4 text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400">Quantity</th>
+<th class="px-6 py-4 text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400">Handled By</th>
+<th class="px-6 py-4 text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400 text-right">Status</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-slate-100 dark:divide-slate-800">
+<!-- Row 1: Purchase (Stock In) -->
+<tr class="hover:bg-slate-50 dark:hover:bg-slate-800/30 transition-colors">
+<td class="px-6 py-5 whitespace-nowrap">
+<div class="text-sm font-medium text-slate-900 dark:text-slate-100">Oct 24, 2023</div>
+<div class="text-xs text-slate-500">09:15 AM</div>
+</td>
+<td class="px-6 py-5">
+<div class="flex items-center gap-3">
+<div class="size-10 rounded-lg bg-slate-100 dark:bg-slate-800 flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-primary/60">laptop_mac</span>
+</div>
+<div>
+<div class="text-sm font-bold text-slate-900 dark:text-slate-100">MacBook Pro M2</div>
+<div class="text-xs text-slate-500">SKU: MB-P2-256</div>
+</div>
+</div>
+</td>
+<td class="px-6 py-5">
+<span class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-bold bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-400">
+<span class="material-symbols-outlined text-sm mr-1">download</span>
+                                            Purchase
+                                        </span>
+</td>
+<td class="px-6 py-5">
+<div class="text-sm font-bold text-green-600 dark:text-green-400">+10 units</div>
+<div class="text-xs text-slate-500">Box A-101</div>
+</td>
+<td class="px-6 py-5">
+<div class="flex items-center gap-2">
+<div class="size-6 rounded-full bg-primary text-[10px] text-white flex items-center justify-center font-bold">AD</div>
+<span class="text-sm text-slate-700 dark:text-slate-300">Admin</span>
+</div>
+</td>
+<td class="px-6 py-5 text-right">
+<span class="inline-flex items-center text-xs font-bold text-slate-900 dark:text-slate-100 px-3 py-1 bg-slate-100 dark:bg-slate-800 rounded-lg">Completed</span>
+</td>
+</tr>
+<!-- Row 2: Sale (Stock Out) -->
+<tr class="hover:bg-slate-50 dark:hover:bg-slate-800/30 transition-colors">
+<td class="px-6 py-5 whitespace-nowrap">
+<div class="text-sm font-medium text-slate-900 dark:text-slate-100">Oct 24, 2023</div>
+<div class="text-xs text-slate-500">10:30 AM</div>
+</td>
+<td class="px-6 py-5">
+<div class="flex items-center gap-3">
+<div class="size-10 rounded-lg bg-slate-100 dark:bg-slate-800 flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-primary/60">mouse</span>
+</div>
+<div>
+<div class="text-sm font-bold text-slate-900 dark:text-slate-100">Logitech MX Master 3S</div>
+<div class="text-xs text-slate-500">SKU: LG-MX-3S</div>
+</div>
+</div>
+</td>
+<td class="px-6 py-5">
+<span class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-bold bg-blue-100 text-blue-700 dark:bg-blue-900/30 dark:text-blue-400">
+<span class="material-symbols-outlined text-sm mr-1">upload</span>
+                                            Sale
+                                        </span>
+</td>
+<td class="px-6 py-5">
+<div class="text-sm font-bold text-red-600 dark:text-red-400">-5 units</div>
+<div class="text-xs text-slate-500">INV-2023-089</div>
+</td>
+<td class="px-6 py-5">
+<div class="flex items-center gap-2">
+<div class="size-6 rounded-full bg-slate-400 text-[10px] text-white flex items-center justify-center font-bold">JS</div>
+<span class="text-sm text-slate-700 dark:text-slate-300">Staff John</span>
+</div>
+</td>
+<td class="px-6 py-5 text-right">
+<span class="inline-flex items-center text-xs font-bold text-slate-900 dark:text-slate-100 px-3 py-1 bg-slate-100 dark:bg-slate-800 rounded-lg">Completed</span>
+</td>
+</tr>
+<!-- Row 3: Adjustment -->
+<tr class="hover:bg-slate-50 dark:hover:bg-slate-800/30 transition-colors">
+<td class="px-6 py-5 whitespace-nowrap">
+<div class="text-sm font-medium text-slate-900 dark:text-slate-100">Oct 23, 2023</div>
+<div class="text-xs text-slate-500">02:20 PM</div>
+</td>
+<td class="px-6 py-5">
+<div class="flex items-center gap-3">
+<div class="size-10 rounded-lg bg-slate-100 dark:bg-slate-800 flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-primary/60">monitor</span>
+</div>
+<div>
+<div class="text-sm font-bold text-slate-900 dark:text-slate-100">Dell Monitor 24"</div>
+<div class="text-xs text-slate-500">SKU: DL-24-IPS</div>
+</div>
+</div>
+</td>
+<td class="px-6 py-5">
+<span class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-bold bg-amber-100 text-amber-700 dark:bg-amber-900/30 dark:text-amber-400">
+<span class="material-symbols-outlined text-sm mr-1">settings_backup_restore</span>
+                                            Adjustment
+                                        </span>
+</td>
+<td class="px-6 py-5">
+<div class="text-sm font-bold text-slate-600 dark:text-slate-400">-2 units</div>
+<div class="text-xs text-slate-500">Damage Control</div>
+</td>
+<td class="px-6 py-5">
+<div class="flex items-center gap-2">
+<div class="size-6 rounded-full bg-primary text-[10px] text-white flex items-center justify-center font-bold">AD</div>
+<span class="text-sm text-slate-700 dark:text-slate-300">Admin</span>
+</div>
+</td>
+<td class="px-6 py-5 text-right">
+<span class="inline-flex items-center text-xs font-bold text-amber-700 bg-amber-50 dark:bg-amber-900/10 px-3 py-1 rounded-lg">Correction</span>
+</td>
+</tr>
+<!-- Row 4: Production (Stock In) -->
+<tr class="hover:bg-slate-50 dark:hover:bg-slate-800/30 transition-colors">
+<td class="px-6 py-5 whitespace-nowrap">
+<div class="text-sm font-medium text-slate-900 dark:text-slate-100">Oct 23, 2023</div>
+<div class="text-xs text-slate-500">11:00 AM</div>
+</td>
+<td class="px-6 py-5">
+<div class="flex items-center gap-3">
+<div class="size-10 rounded-lg bg-slate-100 dark:bg-slate-800 flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-primary/60">smartphone</span>
+</div>
+<div>
+<div class="text-sm font-bold text-slate-900 dark:text-slate-100">iPhone 15 Pro</div>
+<div class="text-xs text-slate-500">SKU: AP-I15P-128</div>
+</div>
+</div>
+</td>
+<td class="px-6 py-5">
+<span class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-bold bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-400">
+<span class="material-symbols-outlined text-sm mr-1">precision_manufacturing</span>
+                                            Production
+                                        </span>
+</td>
+<td class="px-6 py-5">
+<div class="text-sm font-bold text-green-600 dark:text-green-400">+25 units</div>
+<div class="text-xs text-slate-500">Batch #772</div>
+</td>
+<td class="px-6 py-5">
+<div class="flex items-center gap-2">
+<div class="size-6 rounded-full bg-slate-400 text-[10px] text-white flex items-center justify-center font-bold">SS</div>
+<span class="text-sm text-slate-700 dark:text-slate-300">Staff Sarah</span>
+</div>
+</td>
+<td class="px-6 py-5 text-right">
+<span class="inline-flex items-center text-xs font-bold text-blue-700 bg-blue-50 dark:bg-blue-900/10 px-3 py-1 rounded-lg">Processing</span>
+</td>
+</tr>
+<!-- Row 5: Distribution (Stock Out) -->
+<tr class="hover:bg-slate-50 dark:hover:bg-slate-800/30 transition-colors">
+<td class="px-6 py-5 whitespace-nowrap">
+<div class="text-sm font-medium text-slate-900 dark:text-slate-100">Oct 22, 2023</div>
+<div class="text-xs text-slate-500">04:45 PM</div>
+</td>
+<td class="px-6 py-5">
+<div class="flex items-center gap-3">
+<div class="size-10 rounded-lg bg-slate-100 dark:bg-slate-800 flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-primary/60">cable</span>
+</div>
+<div>
+<div class="text-sm font-bold text-slate-900 dark:text-slate-100">USB-C Cable 2m</div>
+<div class="text-xs text-slate-500">SKU: CB-USBC-2</div>
+</div>
+</div>
+</td>
+<td class="px-6 py-5">
+<span class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-bold bg-blue-100 text-blue-700 dark:bg-blue-900/30 dark:text-blue-400">
+<span class="material-symbols-outlined text-sm mr-1">local_shipping</span>
+                                            Distribution
+                                        </span>
+</td>
+<td class="px-6 py-5">
+<div class="text-sm font-bold text-red-600 dark:text-red-400">-50 units</div>
+<div class="text-xs text-slate-500">Retailer X</div>
+</td>
+<td class="px-6 py-5">
+<div class="flex items-center gap-2">
+<div class="size-6 rounded-full bg-slate-400 text-[10px] text-white flex items-center justify-center font-bold">SM</div>
+<span class="text-sm text-slate-700 dark:text-slate-300">Staff Mike</span>
+</div>
+</td>
+<td class="px-6 py-5 text-right">
+<span class="inline-flex items-center text-xs font-bold text-slate-900 dark:text-slate-100 px-3 py-1 bg-slate-100 dark:bg-slate-800 rounded-lg">Completed</span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Pagination -->
+<div class="px-6 py-4 bg-slate-50 dark:bg-slate-800/30 border-t border-slate-200 dark:border-slate-800 flex items-center justify-between">
+<p class="text-xs text-slate-500 font-medium">Showing 1 to 5 of 1,248 movements</p>
+<div class="flex gap-2">
+<button class="px-3 py-1 text-xs font-bold text-slate-400 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-md cursor-not-allowed">Previous</button>
+<button class="px-3 py-1 text-xs font-bold text-white bg-primary rounded-md">1</button>
+<button class="px-3 py-1 text-xs font-bold text-slate-700 dark:text-slate-300 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-md hover:bg-slate-50">2</button>
+<button class="px-3 py-1 text-xs font-bold text-slate-700 dark:text-slate-300 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-md hover:bg-slate-50">3</button>
+<span class="px-2 py-1 text-xs text-slate-500">...</span>
+<button class="px-3 py-1 text-xs font-bold text-slate-700 dark:text-slate-300 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-md hover:bg-slate-50">Next</button>
+</div>
+</div>
+</div>
+</main>
+<!-- Quick Summary Section -->
+<footer class="bg-white dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800 mt-auto">
+<div class="max-w-7xl mx-auto px-4 md:px-10 py-6">
+<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
+<div class="flex flex-col">
+<span class="text-xs text-slate-500 font-bold uppercase tracking-wider mb-1">Stock In Today</span>
+<div class="flex items-center gap-2">
+<span class="text-xl font-bold text-green-600">+142</span>
+<span class="material-symbols-outlined text-green-600 text-lg">trending_up</span>
+</div>
+</div>
+<div class="flex flex-col">
+<span class="text-xs text-slate-500 font-bold uppercase tracking-wider mb-1">Stock Out Today</span>
+<div class="flex items-center gap-2">
+<span class="text-xl font-bold text-red-600">-86</span>
+<span class="material-symbols-outlined text-red-600 text-lg">trending_down</span>
+</div>
+</div>
+<div class="flex flex-col">
+<span class="text-xs text-slate-500 font-bold uppercase tracking-wider mb-1">Pending Adjustments</span>
+<div class="flex items-center gap-2">
+<span class="text-xl font-bold text-amber-600">3</span>
+<span class="material-symbols-outlined text-amber-600 text-lg">pending_actions</span>
+</div>
+</div>
+<div class="flex flex-col">
+<span class="text-xs text-slate-500 font-bold uppercase tracking-wider mb-1">Total Active SKUs</span>
+<div class="flex items-center gap-2">
+<span class="text-xl font-bold text-primary dark:text-white">842</span>
+<span class="material-symbols-outlined text-primary dark:text-slate-400 text-lg">inventory</span>
+</div>
+</div>
+</div>
+</div>
+</footer>
+</div>
+</div>
+</body></html>

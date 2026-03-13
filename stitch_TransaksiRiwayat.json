@@ -1,0 +1,28 @@
+﻿{
+    "id":  1,
+    "jsonrpc":  "2.0",
+    "result":  {
+                   "content":  [
+                                   {
+                                       "text":  "{\"name\":\"projects/18023947034978952346/screens/a8310fee7725459dba16d6276289aa85\",\"title\":\"Stok: Transaksi \u0026 Riwayat\",\"screenshot\":{\"name\":\"projects/18023947034978952346/files/8eab7b5ed1f54ab5b15610dadbdcf2cd\",\"downloadUrl\":\"https://lh3.googleusercontent.com/aida/AOfcidWWrcfScG2EegGm4BWK_zP0W7iO9r6sxQibK3oVtSOLruCcTEo-wYjOBMDz4sdy3ei08R1wbDU4eth4uGH_nC08jIYEOsjK1Mg9ZhEhsQO_aVgqWBp4s6LgdBqtTNfirWf5sERm_s4RFvf88B_IcK-lkN6785-3Uatj9luefJSAVhbJo22tROEzZ6DRJdLArAs5loljzC8oaxKVvxCs6gKAmkfk0cob6Ac_VHBN0DEnzA_yH0Zj9fjJO5vO\"},\"htmlCode\":{\"name\":\"projects/18023947034978952346/files/e7cbc396588f4828a116fd1dbf75ee6b\",\"downloadUrl\":\"https://contribution.usercontent.google.com/download?c=CgthaWRhX2NvZGVmeBJ8Eh1hcHBfY29tcGFuaW9uX2dlbmVyYXRlZF9maWxlcxpbCiVodG1sX2I3NzAwNDUwZmExYzRhMTI4NjA2NTQ1ODI1MjViOTlkEgsSBxDTtabduwcYAZIBJAoKcHJvamVjdF9pZBIWQhQxODAyMzk0NzAzNDk3ODk1MjM0Ng\u0026filename=\u0026opi=89354086\",\"mimeType\":\"text/html\"},\"width\":\"2560\",\"height\":\"2048\",\"deviceType\":\"DESKTOP\"}",
+                                       "type":  "text"
+                                   }
+                               ],
+                   "structuredContent":  {
+                                             "deviceType":  "DESKTOP",
+                                             "height":  "2048",
+                                             "htmlCode":  {
+                                                              "downloadUrl":  "https://contribution.usercontent.google.com/download?c=CgthaWRhX2NvZGVmeBJ8Eh1hcHBfY29tcGFuaW9uX2dlbmVyYXRlZF9maWxlcxpbCiVodG1sX2I3NzAwNDUwZmExYzRhMTI4NjA2NTQ1ODI1MjViOTlkEgsSBxDTtabduwcYAZIBJAoKcHJvamVjdF9pZBIWQhQxODAyMzk0NzAzNDk3ODk1MjM0Ng\u0026filename=\u0026opi=89354086",
+                                                              "mimeType":  "text/html",
+                                                              "name":  "projects/18023947034978952346/files/e7cbc396588f4828a116fd1dbf75ee6b"
+                                                          },
+                                             "name":  "projects/18023947034978952346/screens/a8310fee7725459dba16d6276289aa85",
+                                             "screenshot":  {
+                                                                "downloadUrl":  "https://lh3.googleusercontent.com/aida/AOfcidWWrcfScG2EegGm4BWK_zP0W7iO9r6sxQibK3oVtSOLruCcTEo-wYjOBMDz4sdy3ei08R1wbDU4eth4uGH_nC08jIYEOsjK1Mg9ZhEhsQO_aVgqWBp4s6LgdBqtTNfirWf5sERm_s4RFvf88B_IcK-lkN6785-3Uatj9luefJSAVhbJo22tROEzZ6DRJdLArAs5loljzC8oaxKVvxCs6gKAmkfk0cob6Ac_VHBN0DEnzA_yH0Zj9fjJO5vO",
+                                                                "name":  "projects/18023947034978952346/files/8eab7b5ed1f54ab5b15610dadbdcf2cd"
+                                                            },
+                                             "title":  "Stok: Transaksi \u0026 Riwayat",
+                                             "width":  "2560"
+                                         }
+               }
+}

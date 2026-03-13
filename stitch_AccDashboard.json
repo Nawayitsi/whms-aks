@@ -1,0 +1,28 @@
+﻿{
+    "id":  1,
+    "jsonrpc":  "2.0",
+    "result":  {
+                   "content":  [
+                                   {
+                                       "text":  "{\"name\":\"projects/18023947034978952346/screens/abdf3639d1204000a2c21d3ee68ca848\",\"title\":\"Accounting Dashboard\",\"screenshot\":{\"name\":\"projects/18023947034978952346/files/10f1653a7ca54467b523fc8d28e41b04\",\"downloadUrl\":\"https://lh3.googleusercontent.com/aida/AOfcidWdDAPqAkhyt3sObA3hndK5ApHf1G6nYgraO2JDxk0gE34jMm0rwAnwBVh_qApAlXF89JznT0kQqRVFUznxnq5hO0hwzE8ifWqLUDvvFshTRoQwTy6INTo2f3VzRzhXt27caj4-9MuAwvCsolPU9Q8d4C3JDIu9NBPhlBoUBrwYXI719w_pl4njnzFLro_c8R8Wc_AZOLTqpcjaUxpWi7nZM1uhcygvH8iE7GsZdCvVi628Fkf_XqkxVcQ\"},\"htmlCode\":{\"name\":\"projects/18023947034978952346/files/ef30d582449d47b284683333a1f22232\",\"downloadUrl\":\"https://contribution.usercontent.google.com/download?c=CgthaWRhX2NvZGVmeBJ8Eh1hcHBfY29tcGFuaW9uX2dlbmVyYXRlZF9maWxlcxpbCiVodG1sXzFkNTQ4OGFlZGFmNTRiMDQ5MTI0N2UyMTcwNmNiMmQ0EgsSBxDTtabduwcYAZIBJAoKcHJvamVjdF9pZBIWQhQxODAyMzk0NzAzNDk3ODk1MjM0Ng\u0026filename=\u0026opi=89354086\",\"mimeType\":\"text/html\"},\"width\":\"2560\",\"height\":\"2048\",\"deviceType\":\"DESKTOP\"}",
+                                       "type":  "text"
+                                   }
+                               ],
+                   "structuredContent":  {
+                                             "deviceType":  "DESKTOP",
+                                             "height":  "2048",
+                                             "htmlCode":  {
+                                                              "downloadUrl":  "https://contribution.usercontent.google.com/download?c=CgthaWRhX2NvZGVmeBJ8Eh1hcHBfY29tcGFuaW9uX2dlbmVyYXRlZF9maWxlcxpbCiVodG1sXzFkNTQ4OGFlZGFmNTRiMDQ5MTI0N2UyMTcwNmNiMmQ0EgsSBxDTtabduwcYAZIBJAoKcHJvamVjdF9pZBIWQhQxODAyMzk0NzAzNDk3ODk1MjM0Ng\u0026filename=\u0026opi=89354086",
+                                                              "mimeType":  "text/html",
+                                                              "name":  "projects/18023947034978952346/files/ef30d582449d47b284683333a1f22232"
+                                                          },
+                                             "name":  "projects/18023947034978952346/screens/abdf3639d1204000a2c21d3ee68ca848",
+                                             "screenshot":  {
+                                                                "downloadUrl":  "https://lh3.googleusercontent.com/aida/AOfcidWdDAPqAkhyt3sObA3hndK5ApHf1G6nYgraO2JDxk0gE34jMm0rwAnwBVh_qApAlXF89JznT0kQqRVFUznxnq5hO0hwzE8ifWqLUDvvFshTRoQwTy6INTo2f3VzRzhXt27caj4-9MuAwvCsolPU9Q8d4C3JDIu9NBPhlBoUBrwYXI719w_pl4njnzFLro_c8R8Wc_AZOLTqpcjaUxpWi7nZM1uhcygvH8iE7GsZdCvVi628Fkf_XqkxVcQ",
+                                                                "name":  "projects/18023947034978952346/files/10f1653a7ca54467b523fc8d28e41b04"
+                                                            },
+                                             "title":  "Accounting Dashboard",
+                                             "width":  "2560"
+                                         }
+               }
+}

@@ -1,0 +1,28 @@
+﻿{
+    "id":  1,
+    "jsonrpc":  "2.0",
+    "result":  {
+                   "content":  [
+                                   {
+                                       "text":  "{\"name\":\"projects/18023947034978952346/screens/487321bd59f548a7821d7d5be58dfe0c\",\"title\":\"Admin Main Page\",\"screenshot\":{\"name\":\"projects/18023947034978952346/files/da58919930b648b6a566c3c55f1eec67\",\"downloadUrl\":\"https://lh3.googleusercontent.com/aida/AOfcidVhXrv7A5n3NUMvQu-RM6PPL9JyJGzmZmu04oyloqRlplMyu8p8jwazW8oOXvFS_NUxaT63NEmCFkDmN7wTr8OMX0ez9SGdvOdUKd2o6IHz8lB5_f2QQ0AoV-fJBb2YilFKCr-K7z3lvTKopi7Kq0Iuq3Muaw0DNUFKhEntZIimSQKqhg3k7el3eTJUVDa_7rqwVLdFt5QgPy5EOGDhGx99_ngMclTH7vmWYJi_1UAjbd6U88gzc9g24YQ\"},\"htmlCode\":{\"name\":\"projects/18023947034978952346/files/b2e6125f0c004175aee4f9131228ff7a\",\"downloadUrl\":\"https://contribution.usercontent.google.com/download?c=CgthaWRhX2NvZGVmeBJ8Eh1hcHBfY29tcGFuaW9uX2dlbmVyYXRlZF9maWxlcxpbCiVodG1sXzA0M2U3MzMwMWZmNjQyNmRhOTNiYzAwNGUzMWNlYzlkEgsSBxDTtabduwcYAZIBJAoKcHJvamVjdF9pZBIWQhQxODAyMzk0NzAzNDk3ODk1MjM0Ng\u0026filename=\u0026opi=89354086\",\"mimeType\":\"text/html\"},\"width\":\"2560\",\"height\":\"2494\",\"deviceType\":\"DESKTOP\"}",
+                                       "type":  "text"
+                                   }
+                               ],
+                   "structuredContent":  {
+                                             "deviceType":  "DESKTOP",
+                                             "height":  "2494",
+                                             "htmlCode":  {
+                                                              "downloadUrl":  "https://contribution.usercontent.google.com/download?c=CgthaWRhX2NvZGVmeBJ8Eh1hcHBfY29tcGFuaW9uX2dlbmVyYXRlZF9maWxlcxpbCiVodG1sXzA0M2U3MzMwMWZmNjQyNmRhOTNiYzAwNGUzMWNlYzlkEgsSBxDTtabduwcYAZIBJAoKcHJvamVjdF9pZBIWQhQxODAyMzk0NzAzNDk3ODk1MjM0Ng\u0026filename=\u0026opi=89354086",
+                                                              "mimeType":  "text/html",
+                                                              "name":  "projects/18023947034978952346/files/b2e6125f0c004175aee4f9131228ff7a"
+                                                          },
+                                             "name":  "projects/18023947034978952346/screens/487321bd59f548a7821d7d5be58dfe0c",
+                                             "screenshot":  {
+                                                                "downloadUrl":  "https://lh3.googleusercontent.com/aida/AOfcidVhXrv7A5n3NUMvQu-RM6PPL9JyJGzmZmu04oyloqRlplMyu8p8jwazW8oOXvFS_NUxaT63NEmCFkDmN7wTr8OMX0ez9SGdvOdUKd2o6IHz8lB5_f2QQ0AoV-fJBb2YilFKCr-K7z3lvTKopi7Kq0Iuq3Muaw0DNUFKhEntZIimSQKqhg3k7el3eTJUVDa_7rqwVLdFt5QgPy5EOGDhGx99_ngMclTH7vmWYJi_1UAjbd6U88gzc9g24YQ",
+                                                                "name":  "projects/18023947034978952346/files/da58919930b648b6a566c3c55f1eec67"
+                                                            },
+                                             "title":  "Admin Main Page",
+                                             "width":  "2560"
+                                         }
+               }
+}

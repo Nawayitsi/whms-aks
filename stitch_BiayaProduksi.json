@@ -1,0 +1,28 @@
+﻿{
+    "id":  1,
+    "jsonrpc":  "2.0",
+    "result":  {
+                   "content":  [
+                                   {
+                                       "text":  "{\"name\":\"projects/18023947034978952346/screens/2b712c1d8ed449c78f84cdd76c9f6524\",\"title\":\"Accounting: Biaya Produksi\",\"screenshot\":{\"name\":\"projects/18023947034978952346/files/dff3aa54aa66471a9f111c0cce4d27ba\",\"downloadUrl\":\"https://lh3.googleusercontent.com/aida/AOfcidUmsK6O6hCE8NXEkd-5AR6Wlm-7EyNpcKrXDKnBM2YgOROzd7RmxfnohZLakV8T-F0hJJlgHhaTh-J9lHDCmInjQJ-JHq0y1InP0xvbv1YXJQ-ASneOuZOV6GeYC5RrtFtA0tv46AWdrEPYv6bA1vNIDhM5wCl9DJ8ztOMk_QTo0lc5AwdbIGllPCiWeDVsrdUkgwoHvjKuye_1ARRvHe9vqZCfSOfF3N9jOREuqNJWMwGH6-2YPqV0d-M\"},\"htmlCode\":{\"name\":\"projects/18023947034978952346/files/daf40b5bc55d47cea806a2be0a3a0d4d\",\"downloadUrl\":\"https://contribution.usercontent.google.com/download?c=CgthaWRhX2NvZGVmeBJ8Eh1hcHBfY29tcGFuaW9uX2dlbmVyYXRlZF9maWxlcxpbCiVodG1sXzNjZDVmNmZjY2U0ZTQ0NTRhMWIxNTcyMDM4OGEzMjI4EgsSBxDTtabduwcYAZIBJAoKcHJvamVjdF9pZBIWQhQxODAyMzk0NzAzNDk3ODk1MjM0Ng\u0026filename=\u0026opi=89354086\",\"mimeType\":\"text/html\"},\"width\":\"2560\",\"height\":\"2702\",\"deviceType\":\"DESKTOP\"}",
+                                       "type":  "text"
+                                   }
+                               ],
+                   "structuredContent":  {
+                                             "deviceType":  "DESKTOP",
+                                             "height":  "2702",
+                                             "htmlCode":  {
+                                                              "downloadUrl":  "https://contribution.usercontent.google.com/download?c=CgthaWRhX2NvZGVmeBJ8Eh1hcHBfY29tcGFuaW9uX2dlbmVyYXRlZF9maWxlcxpbCiVodG1sXzNjZDVmNmZjY2U0ZTQ0NTRhMWIxNTcyMDM4OGEzMjI4EgsSBxDTtabduwcYAZIBJAoKcHJvamVjdF9pZBIWQhQxODAyMzk0NzAzNDk3ODk1MjM0Ng\u0026filename=\u0026opi=89354086",
+                                                              "mimeType":  "text/html",
+                                                              "name":  "projects/18023947034978952346/files/daf40b5bc55d47cea806a2be0a3a0d4d"
+                                                          },
+                                             "name":  "projects/18023947034978952346/screens/2b712c1d8ed449c78f84cdd76c9f6524",
+                                             "screenshot":  {
+                                                                "downloadUrl":  "https://lh3.googleusercontent.com/aida/AOfcidUmsK6O6hCE8NXEkd-5AR6Wlm-7EyNpcKrXDKnBM2YgOROzd7RmxfnohZLakV8T-F0hJJlgHhaTh-J9lHDCmInjQJ-JHq0y1InP0xvbv1YXJQ-ASneOuZOV6GeYC5RrtFtA0tv46AWdrEPYv6bA1vNIDhM5wCl9DJ8ztOMk_QTo0lc5AwdbIGllPCiWeDVsrdUkgwoHvjKuye_1ARRvHe9vqZCfSOfF3N9jOREuqNJWMwGH6-2YPqV0d-M",
+                                                                "name":  "projects/18023947034978952346/files/dff3aa54aa66471a9f111c0cce4d27ba"
+                                                            },
+                                             "title":  "Accounting: Biaya Produksi",
+                                             "width":  "2560"
+                                         }
+               }
+}
